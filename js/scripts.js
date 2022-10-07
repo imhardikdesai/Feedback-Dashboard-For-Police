@@ -2,10 +2,7 @@
 
 var sidebarOpen = false;
 var sidebar = document.getElementById("sidebar");
-let graphicalViewbtn = document.getElementById("graphicalViewbtn");
 
-// graphicalViewbtn.addEventListener("click", function () {
-//   allChartsBox
 
 function openSidebar() {
   if (!sidebarOpen) {
@@ -45,13 +42,6 @@ function showChart(chartID) {
 
   updatedArraytoHide(chartID)
 }
-
-
-
-
-
-
-
 
 // random number array 
 let numbers = [41, 65, 90, 31, 37, 53, 49, 87, 43, 83, 40, 30, 51, 32, 67, 48, 97, 56, 48, 60, 32, 89, 67, 32, 77, 75, 98, 32, 45, 52, 80, 41, 68, 37]

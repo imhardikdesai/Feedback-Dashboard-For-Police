@@ -17,6 +17,24 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .apexcharts-legend-text {
+      color: white !important;
+    }
+
+    #navButtons {
+      width: 60vw;
+    }
+
+    #allChartsBox {
+      display: none;
+    }
+
+    #pieChart,
+    #barChart {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -103,9 +121,52 @@
           </tr>
         </tbody>
       </table>
+      <!-- Pagination Code Starts Here -->
+
+      <!-- <nav class="mt-2" aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link active" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav> -->
+
+      <!-- Pagination Code Ends Here -->
+
+      <div id="allChartsBox" class="mt-5">
+        <div id="navButtons" class="d-flex justify-content-evenly">
+          <button type="button" onclick="showChart('barChart')" class="btn btn-success">BAR Chart</button>
+          <button type="button" onclick="showChart('histroChart')" class="btn btn-danger active">HISTRO Gram</button>
+          <button type="button" onclick="showChart('pieChart')" class="btn btn-warning">PIE Chart</button>
+        </div>
+
+        <div class="charts">
+
+          <div id="barChart" class="charts-card">
+            <h2 class="chart-title">Top 5 Products</h2>
+            <div id="bar-chart"></div>
+          </div>
+
+          <div id="histroChart" class="charts-card">
+            <h2 class="chart-title">Purchase and Sales Orders</h2>
+            <div id="area-chart"></div>
+          </div>
+
+          <div id="pieChart" class="charts-card">
+            <h2 class="chart-title">Purchase and Sales Orders</h2>
+            <div id="chart"></div>
+          </div>
+
+        </div>
+
+      </div>
     </main>
-
-
     <!-- End Main -->
 
   </div>
@@ -119,7 +180,8 @@
   <!-- ApexCharts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
   <!-- Custom JS -->
-  <!-- <script src="js/scripts.js"></script> -->
+  <script src="js/scripts.js"></script>
+  <script src="js/Response.js"></script>
 </body>
 
 </html>
