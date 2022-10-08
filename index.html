@@ -39,8 +39,8 @@
                             </form>
                         </div>
 
-                        <form action="HomePage.html" method=”post”>
-                            <button type="submit" onclick="checkRecaptcha();"
+                        <form>
+                            <button type="button" onclick="checkRecaptcha();"
                                 class="btn btn-primary btn-block">Login</button>
                         </form>
 
@@ -55,12 +55,12 @@
             var response = grecaptcha.getResponse();
             if (response.length == 0) {
                 //reCaptcha not verified
-                alert("Please verify re-captch first");
+                alert("please verify recaptcha first");
+            } else if (document.getElementById("email").value == "" || document.getElementById("password").value =="") {
+                alert('Enter valid id and password');
+            } else {
+                window.open("HomePage.html", "_self")
             }
-            //   else { 
-            //     //reCaptch verified
-            //     // alert("pass"); 
-            //   }
         }
     </script>
     <!-- <?php

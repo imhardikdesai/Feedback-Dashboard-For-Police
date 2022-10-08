@@ -240,15 +240,11 @@ var barChartOptions = {
 var barChart = new ApexCharts(document.querySelector("#bar-chart"), barChartOptions);
 barChart.render();
 
-
 // AREA CHART
 var areaChartOptions = {
   series: [{
-    name: "Purchase Orders",
-    data: [31, 40, 28, 51, 42, 109, 100],
-  }, {
-    name: "Sales Orders",
-    data: [11, 32, 45, 32, 34, 52, 41],
+    name: "Total Feedback",
+    data: [41, 65, 90, 31, 37, 53, 49, 87, 43, 83, 40, 30],
   }],
   chart: {
     type: "area",
@@ -261,7 +257,7 @@ var areaChartOptions = {
     },
   },
   colors: ["#00ab57", "#d50000"],
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   dataLabels: {
     enabled: false,
   },
