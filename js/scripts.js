@@ -43,8 +43,29 @@ function showChart(chartID) {
   updatedArraytoHide(chartID)
 }
 
-// random number array 
+
 let numbers = [41, 65, 90, 31, 37, 53, 49, 87, 43, 83, 40, 30, 51, 32, 67, 48, 97, 56, 48, 60, 32, 89, 67, 32, 77, 75, 98, 32, 45, 52, 80, 41, 68, 37]
+function decOrder() {
+  numbers = numbers.sort()
+  numbers = numbers.reverse()
+  var barChart = new ApexCharts(document.querySelector("#bar-chart"), barChartOptions);
+  barChart.render();
+}
+function incOrder() {
+  numbers = numbers.sort()
+  var barChart = new ApexCharts(document.querySelector("#bar-chart"), barChartOptions);
+  barChart.render();
+}
+
+// document.getElementById('decOrder').addEventListener('click', () => {
+//   numbers = numbers.sort()
+//   numbers = numbers.reverse()
+// })
+// document.getElementById('incOrder').addEventListener('click', () => {
+//   numbers = numbers.sort()
+// })
+
+// random number array 
 // ---------- CHARTS ----------
 
 // BAR CHART

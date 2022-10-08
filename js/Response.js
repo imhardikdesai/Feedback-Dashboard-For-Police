@@ -8,3 +8,5 @@ graphicalViewbtn.addEventListener("click", function () {
   }
 
 });
+
+
