@@ -45,6 +45,57 @@ function showChart(chartID) {
 
 
 let numbers = [41, 65, 90, 31, 37, 53, 49, 87, 43, 83, 40, 30, 51, 32, 67, 48, 97, 56, 48, 60, 32, 89, 67, 32, 77, 75, 98, 32, 45, 52, 80, 41, 68, 37]
+let cityArr = ['Ahmedabad', 'Amreli', 'Anand', 'Aravalli', 'Banaskantha (Palanpur)', 'Bharuch', 'Bhavnagar', 'Botad', 'Chhota Udepur', 'Dahod', 'Dangs (Ahwa)', 'Devbhoomi Dwarka', 'Gandhinagar', 'Gir Somnath', 'Jamnagar', 'Junagadh', 'Kachchh', 'Kheda (Nadiad)', 'Mahisagar', 'Mehsana', 'Morbi', 'Narmada (Rajpipla)', 'Navsari', 'Panchmahal (Godhra)', 'Patan', 'Porbandar', 'Rajkot', 'Sabarkantha (Himmatnagar)', 'Surat', 'Surendranagar', 'Tapi (Vyara)', 'Vadodara', 'Valsad']
+
+// const cityObj = {
+//   "Ahmedabad": 41,
+//   "Amreli": 65,
+//   "Anand": 90,
+//   "Aravalli": 31,
+//   "Banaskantha (Palanpur)": 37,
+//   "Bharuch": 53,
+//   "Bhavnagar": 49,
+//   "Botad": 87,
+//   "Chhota Udepur": 43,
+//   "Dahod": 83,
+//   "Dangs (Ahwa)": 40,
+//   "Devbhoomi Dwarka": 30,
+//   "Gandhinagar": 51,
+//   "Gir Somnath": 32,
+//   "Jamnagar": 67,
+//   "Junagadh": 48,
+//   "Kachchh": 97,
+//   "Kheda (Nadiad)": 56,
+//   "Mahisagar": 48,
+//   "Mehsana": 60,
+//   "Morbi": 32,
+//   "Narmada (Rajpipla)": 89,
+//   "Navsari": 67,
+//   "Panchmahal (Godhra)": 32,
+//   "Patan": 77,
+//   "Porbandar": 75,
+//   "Rajkot": 98,
+//   "Sabarkantha (Himmatnagar)": 32,
+//   "Surat": 45,
+//   "Surendranagar": 52,
+//   "Tapi (Vyara)": 80,
+//   "Vadodara": 41,
+//   "Valsad": 68
+// };
+
+// const sortObject = cityObj => {
+//   const sorter = (a, b) => {
+//     return cityObj[a] - cityObj[b];
+//   };
+//   const keys = Object.keys(cityObj);
+//   keys.sort(sorter);
+//   const res = {};
+//   keys.forEach(key => {
+//     res[key] = cityObj[key];
+//   });
+//   return res;
+// };
+
 function decOrder() {
   numbers = numbers.sort()
   numbers = numbers.reverse()
@@ -72,7 +123,7 @@ function incOrder() {
 var barChartOptions = {
   series: [{
     data: numbers,
-    name: "Products",
+    name: "Feedbacks",
   }],
   chart: {
     type: "bar",
@@ -143,7 +194,7 @@ var barChartOptions = {
     theme: "dark",
   },
   xaxis: {
-    categories: ['Ahmedabad', 'Amreli', 'Anand', 'Aravalli', 'Banaskantha (Palanpur)', 'Bharuch', 'Bhavnagar', 'Botad', 'Chhota Udepur', 'Dahod', 'Dangs (Ahwa)', 'Devbhoomi Dwarka', 'Gandhinagar', 'Gir Somnath', 'Jamnagar', 'Junagadh', 'Kachchh', 'Kheda (Nadiad)', 'Mahisagar', 'Mehsana', 'Morbi', 'Narmada (Rajpipla)', 'Navsari', 'Panchmahal (Godhra)', 'Patan', 'Porbandar', 'Rajkot', 'Sabarkantha (Himmatnagar)', 'Surat', 'Surendranagar', 'Tapi (Vyara)', 'Vadodara', 'Valsad'],
+    categories: cityArr,
     title: {
       style: {
         color: "#f5f7ff",
@@ -316,7 +367,7 @@ var options = {
     width: 1100,
     type: 'pie',
   },
-  labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+  labels: cityArr,
   responsive: [{
     breakpoint: 480,
     options: {
@@ -332,3 +383,5 @@ var options = {
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
+
+
