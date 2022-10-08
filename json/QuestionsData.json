@@ -1,0 +1,36 @@
+{
+    "questionsData": [
+        {
+            "id": "Q1",
+            "question": "How did you come to the police station?",
+            "options": [
+                "Through a person known to a police office",
+                "With a neighbour/ local leader",
+                "On your own"
+            ],
+            "feedbackData": [
+                78,
+                203,
+                63
+            ]
+        },
+        {
+            "id": "Q2",
+            "question": "After how much time you were heard in PS?",
+            "options": [
+                "More than 15 minutes",
+                "15 minutes",
+                "10 minutes",
+                "5 minutes",
+                "immediately"
+            ],
+            "feedbackData": [
+                50,
+                70,
+                10,
+                250,
+                48
+            ]
+        }
+    ]
+}
