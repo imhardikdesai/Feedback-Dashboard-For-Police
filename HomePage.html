@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Responses</title>
+  <title>Admin Dashboard</title>
   <!-- Boostrtap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -17,7 +17,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
-  <style>
+  <!-- <style>
     .apexcharts-legend-text {
       color: white !important;
     }
@@ -26,15 +26,11 @@
       width: 60vw;
     }
 
-    #allChartsBox {
-      display: none;
-    }
-
     #pieChart,
     #barChart {
       display: none;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -45,9 +41,6 @@
       <div class="menu-icon" onclick="openSidebar()">
         <span class="material-icons-outlined">menu</span>
       </div>
-      <!-- <div class="header-left">
-        <span class="material-icons-outlined">search</span>
-      </div> -->
       <!-- <a href="HomePage.html" class="linkTag">
         <div class="header-right">
           <span class="material-icons-outlined">account_circle</span>
@@ -60,7 +53,7 @@
     <aside id="sidebar">
       <div class="sidebar-title justify-content-center">
         <div class="sidebar-brand">
-          <img class="m-2" style="height: 90px;" src="./images/Gujarat_Police_Logo.png" alt="logo">Admin
+          <img class="m-2" style="height: 90px" src="./images/Gujarat_Police_Logo.png" alt=""> Admin
         </div>
       </div>
 
@@ -78,8 +71,7 @@
         <a class="logout" href="index.html">
           <li class="sidebar-list-item">
             <!-- <span class="material-icons-outlined">inventory_2</span> Responses -->
-            <button style="position: absolute; bottom: 30px; left: 40px; width: 170px;" class="btn btn-danger">Log
-              Out</button>
+            <button style="position: absolute; bottom: 30px; left: 40px; width: 170px;" class="btn btn-danger">Log Out</button>
           </li>
         </a>
       </ul>
@@ -87,68 +79,47 @@
     <!-- End Sidebar -->
 
     <!-- Main -->
-
     <main class="main-container">
-      <div class="main-title mb-3 align-items-center">
+      <div class="main-title">
         <h2 style="display: block;
         font-size: 1.5em;
         margin-block-start: 0.83em;
         margin-block-end: 0.83em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
-        font-weight: bold;">RESPONSES</h2>
-
-        <button id="graphicalViewbtn" style="font-size: 1.5em;
-        margin-block-start: 0.83em;
-        margin-block-end: 0.83em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        font-weight: bold;" class="btn btn-primary">Graphical View</button>
+        font-weight: bold;">DASHBOARD</h2>
       </div>
 
-      <table class="table text-white">
-        <thead>
-          <tr>
-            <th scope="col">Sr No</th>
-            <th scope="col">Police Station</th>
-            <th scope="col">City</th>
-            <th scope="col">Sub Divison</th>
-            <th scope="col">Distinct</th>
-            <th scope="col">Feedback</th>
-            <th scope="col">Total Feedback</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Wadhwan Police Station</td>
-            <td>Wadhwan</td>
-            <td>A-Surendranagar</td>
-            <td>Surendranagar</td>
-            <td>Good Service</td>
-            <td>258</td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- Pagination Code Starts Here -->
+      <div class="main-cards">
 
-      <!-- <nav class="mt-2" aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link active" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav> -->
+        <div class="card">
+          <div class="card-inner">
+            <h3>Total Feedbacks</h3>
+            <span class="material-icons-outlined">inventory_2</span>
+          </div>
+          <h1>249</h1>
+        </div>
 
-      <!-- Pagination Code Ends Here -->
+        <div class="card">
+          <div class="card-inner">
+            <h3>Today Feedbacks</h3>
+            <span class="material-icons-outlined">category</span>
+          </div>
+          <h1>25</h1>
+        </div>
 
-      <div id="allChartsBox" class="mt-5">
+        <div class="card">
+          <div class="card-inner">
+            <h3>This Month Feddbacks</h3>
+            <span class="material-icons-outlined">groups</span>
+          </div>
+          <h1>1500</h1>
+        </div>
+
+      </div>
+
+
+      <!-- <div id="allChartsBox">
         <div id="navButtons" class="d-flex justify-content-evenly">
           <button type="button" onclick="showChart('barChart')" class="btn btn-success">BAR Chart</button>
           <button type="button" onclick="showChart('histroChart')" class="btn btn-danger active">HISTRO Gram</button>
@@ -159,14 +130,6 @@
 
           <div id="barChart" class="charts-card">
             <h2 class="chart-title">Top 5 Products</h2>
-            <div class="d-flex align-items-center justify-content-evenly m-3">
-              <button type="button" value="non-increasing order" onclick="decOrder()"
-                class="btn btn-danger active">Decreasing
-                order</button>
-              <button type="button" value="increasing order" onclick="incOrder()"
-                class="btn btn-danger active">increasing
-                order</button>
-            </div>
             <div id="bar-chart"></div>
           </div>
 
@@ -182,38 +145,39 @@
 
         </div>
 
-      </div>
+      </div> -->
     </main>
     <!-- End Main -->
 
   </div>
+  <script>
+    var sidebarOpen = false;
+    var sidebar = document.getElementById("sidebar");
 
-  <!-- Scripts -->
-  <!-- Boostrap JS  -->
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-
-  <!-- ApexCharts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
-  <!-- Custom JS -->
-  <script src="js/scripts.js"></script>
-  <script src="js/Response.js"></script>
-
-  <!-- <script>
-    //media quries
-    function myFunction(x) {
-      if (!x.matches) { // If media query matches
-        // document.getElementById('apexchartswwuo0z1ej').setAttribute('width', '450px');
-        document.body.style.backgroundColor = "yellow";
+    function openSidebar() {
+      if (!sidebarOpen) {
+        sidebar.classList.add("sidebar-responsive");
+        sidebarOpen = true;
       }
     }
 
-    var x = window.matchMedia("(min-width: 1370px)")
-    myFunction(x) // Call listener function at run time
-    x.addListener(myFunction) 
-  </script> -->
+    function closeSidebar() {
+      if (sidebarOpen) {
+        sidebar.classList.remove("sidebar-responsive");
+        sidebarOpen = false;
+      }
+    }
+
+  </script>
+  <!-- Scripts -->
+  <!-- ApexCharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+  <!-- Custom JS -->
+  <!-- <script src="js/scripts.js"></script> -->
+  <!-- Boostrap JS  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
