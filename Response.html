@@ -14,6 +14,8 @@
 
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <!-- Custom CSS -->
@@ -117,15 +119,22 @@
           <tr>
             <th scope="col">Sr No</th>
             <th scope="col">Police Station</th>
-            <th scope="col">City</th>
-            <th scope="col">Sub Divison</th>
-            <th scope="col">Distinct</th>
+            <!-- <th scope="col">City</th> -->
+            <!-- <th scope="col">Sub Divison</th> -->
+            <!-- <th scope="col">Distinct</th> -->
+            <th scope="col">Q1</th>
+            <th scope="col">Q2</th>
             <th scope="col">Feedback</th>
-            <th scope="col">Total Feedback</th>
+            <th scope="col">Date</th>
+            <!-- <th scope="col">Total Feedback</th> -->
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="tbody">
+
+
+
+
+          <!-- <tr>
             <th scope="row">1</th>
             <td>Wadhwan Police Station</td>
             <td>Wadhwan</td>
@@ -133,7 +142,7 @@
             <td>Surendranagar</td>
             <td>Good Service</td>
             <td>258</td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
       <!-- Pagination Code Starts Here -->
@@ -221,5 +230,47 @@
     x.addListener(myFunction) 
   </script> -->
 </body>
+<script>
+
+  fetch('http://localhost/HECKATHON/Feedback-Dashboard-For-Police/API/feedback.php')
+    .then(response => response.json())
+    .then(data => {
+      function getQ1Answer(item) {
+        if (item == "1") {
+          return "Through a person known to a police officer"
+        } else if (item == "2") {
+          return "With a neighbour/ local leader"
+        } else {
+          return "On your own"
+        }
+      }
+      function getQ2Answer(item) {
+        if (item == "1") {
+          return "More than 15 minutes"
+        } else if (item == "2") {
+          return "15 minutes"
+        } else if (item == "3") {
+          return "10 minutes"
+        } else if (item == "4") {
+          return "5 minutes"
+        } else {
+          return "Immediately"
+        }
+      }
+      let str = ""
+      data.forEach((item, index) => {
+        str += `<tr>
+        <th scope="row">${index + 1}</th>
+        <td>${item.p_id}</td>
+        <td>${getQ1Answer(item.q1)}</td>
+        <td>${getQ2Answer(item.q2)}</td>
+        <td>${item.q3}</td>
+        <td>${item.f_date}</td>`
+      })
+      document.getElementById('tbody').innerHTML = str
+    })
+    .catch(err => console.error(err));
+
+</script>
 
 </html>
