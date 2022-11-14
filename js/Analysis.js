@@ -1,6 +1,6 @@
 function updateChart(selectedID) {
     async function getUserAsync() {
-        let response = await fetch('../json/QuestionsData.json');
+        let response = await fetch('https://raw.githubusercontent.com/imhardikdesai/Feedback-Dashboard-For-Police/master/json/QuestionsData.json');
         let data = await response.json()
         // if (document.getElementById("spinnerBox").style.display == "none ") {
         //     document.getElementById("spinnerBox").style.display = "flex !important";
