@@ -53,3 +53,19 @@ function showGraphs() {
   }
 
 }
+
+
+// if window size is less than 600 than 
+
+// if (window.matchMedia("width: 600px").matches) {
+// }
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    alert("Please use a Desktop site for better experience");
+  }
+}
+
+var x = window.matchMedia("(max-width: 600px)")
+myFunction(x) // Call listener function at run time
+// x.addEventListener("onload", myFunction)
