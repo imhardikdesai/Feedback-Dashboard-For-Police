@@ -128,8 +128,10 @@ var barChartOptions = {
   chart: {
     type: "bar",
     background: "transparent",
-    height: 450,
-    width: 1100,
+    // height: 450,
+    // width: 1100,
+    height: 'auto',
+    width: '100%',
     toolbar: {
       show: false,
     },
@@ -249,8 +251,10 @@ var areaChartOptions = {
   chart: {
     type: "area",
     background: "transparent",
-    height: 450,
-    width: 1100,
+    // height: 450,
+    // width: 1100,
+    height: 'auto',
+    width: '100%',
     stacked: false,
     toolbar: {
       show: false,
@@ -359,8 +363,10 @@ areaChart.render();
 var options = {
   series: numbers,
   chart: {
-    height: 450,
-    width: 1100,
+    // height: 450,
+    // width: 1100,
+    height: 'auto',
+    width: '100%',
     type: 'pie',
   },
   labels: cityArr,

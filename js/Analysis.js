@@ -1,3 +1,23 @@
+var sidebarOpen = false;
+var sidebar = document.getElementById("sidebar");
+
+
+function openSidebar() {
+    if (!sidebarOpen) {
+        sidebar.classList.add("sidebar-responsive");
+        sidebarOpen = true;
+    }
+}
+
+function closeSidebar() {
+    if (sidebarOpen) {
+        sidebar.classList.remove("sidebar-responsive");
+        sidebarOpen = false;
+    }
+}
+
+
+
 function updateChart(selectedID) {
     async function getUserAsync() {
         let response = await fetch('https://raw.githubusercontent.com/imhardikdesai/Feedback-Dashboard-For-Police/master/json/QuestionsData.json');
@@ -46,3 +66,5 @@ function updateChart(selectedID) {
         });
 }
 updateChart("Q1");
+
+
