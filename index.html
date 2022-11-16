@@ -42,6 +42,10 @@
                         <form>
                             <button type="button" onclick="checkRecaptcha();"
                                 class="btn btn-primary btn-block">Login</button>
+
+                            <button onclick="goToHome()" type="button" class="btn btn-primary btn-block my-2">Login
+                                With Test Credentials</button>
+
                         </form>
 
                     </form>
@@ -61,6 +65,10 @@
             } else {
                 window.open("HomePage.html", "_self")
             }
+        }
+
+        function goToHome() {
+            window.open("HomePage.html", "_self")
         }
     </script>
     <!-- <?php
